@@ -3,16 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Onloadfunction</title>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script>
+        function myFunction() {
+            $("#test").html("changed")
+        }
+        $(document).ready(myFunction);
+        /*$(document).ready()是文档结构已经加载完成（不包含图片等非文字媒体文件），不必等到所有的加载完毕*/
+
+        /*$(window).load(function()) 是在页面所有元素(包括html标签以及引用到得所有图片,Flash等媒体)加载完毕后执行的， 与body.onload(function)是一样的执行顺序*/
+        $(window).load(function () {
+            alert("Hello");
+        });
+        $(window).load(function () {
+            alert("see you again!")
+        })
+        /*$(window).load(function()) 是在页面所有元素(包括html标签以及引用到得所有图片,Flash等媒体)加载完毕后执行的， 与body.onload(function)是一样的执行顺序*/
+
+    </script>
 </head>
-<body onload="onload1(),onload2()">
-<script>
-    function onload1() {
-        alert("Loading Successfully");
-    }
-    function onload2() {
-        alert("This the second function");
-    }
-</script>
+
+<body>
+<h1 id="test">original</h1>
 
 </body>
 </html>
