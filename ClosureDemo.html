@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClosureDemo</title>
+</head>
+<body>
+<h2>btn index Demo</h2>
+<hr/>
+<form><input type="button" value="btn1">
+    <input type="button" value="btn2">
+    <input type="button" value="btn3">
+    <input type="button" value="btn4">
+    <input type="button" value="btn5">
+</form>
+<style>
+    body {
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+    }
+
+    input[type="button"] {
+        width: 50px;
+        height: 60px;
+        border-radius: 10px;
+        margin: 20px;
+        color: whitesmoke;
+        background-color: darkcyan;
+        cursor: pointer;
+    }
+</style>
+<script>
+    var obtn = document.getElementsByTagName("input");
+    for (var i = 0; i < obtn.length; i++) {
+        obtn[i].index = i;
+        /*将循环数值与btn联结起来*/
+        obtn[i].onclick = function () {
+            alert("你点击了" + "btn" + (this.index + 1));
+            /*利用循环为不同的obtn赋值，同时利用括号将btn数值动态显示*/
+        }
+    }
+</script>
+
+</body>
+
+</html>
