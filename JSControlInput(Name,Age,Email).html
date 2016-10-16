@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Control Input</title>
+</head>
+<body>
+<style>
+    body {
+        text-align: center;
+    }
+
+    input {
+        width: 300px;
+        margin: 5px auto;
+    }
+</style>
+<h2>利用JS实现对姓名、年龄、邮件类型输入框的验证</h2>
+<hr/>
+<form onsubmit="return verifyData()">
+    <input type="text" id="name" value="颜俊勇" size="20">
+    <input type="text" id="age"  value="125" size="20">
+    <input type="text" id="mail" value="mymosun@foxmail.com" size="20">
+    <br/>
+    <input type="submit" value="提交">
+</form>
+<script>
+    function verifyData() {
+        var name = document.getElementById("name").value;
+        var age = document.getElementById("age").value;
+        var mail = document.getElementById("mail").value.indexOf("@");
+        var submitStatus = "true";
+        if (name.length > 10) {
+            alert("姓名不能超过 10 个字符");
+            submitStatus = "false";
+        }
+        if (isNaN(age) || age <1 || age > 200) {
+            alert("年龄范围为 1 到 200");
+            submitStatus = "false";
+        }
+        if (mail == -1) {
+            alert("请输入合法的邮箱地址")
+            submitStatus = "false";
+        }
+        if (submitOk == "false") {
+            return false;
+        }
+    }
+
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
