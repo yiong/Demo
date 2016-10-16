@@ -1,0 +1,43 @@
+<!--模拟实现购物车的增删-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulation of ShoppingCart</title>
+</head>
+<body>
+<style>
+    body {
+        text-align: center;
+    }
+
+</style>
+<h2>模拟购物车增加物品</h2>
+<hr/>
+<select id="market">
+    <option>物品1</option>
+    <option>物品2</option>
+    <option>物品3</option>
+    <option>物品4</option>
+    <option>物品5</option>
+</select>
+<input type="button" value="加入购物车" onclick="cart()">
+<br/>
+<br/>
+<mark>我的购物车</mark>
+<textarea id="shoppingCart" style="overflow: auto;"></textarea>
+<!--添加全部显示-->
+<script>
+    function cart() {
+        var thingNum = document.getElementById("market");
+        var temp = thingNum.options[thingNum.selectedIndex].text;
+        var thingList = document.getElementById("shoppingCart").value;
+        thingList += temp;
+        document.getElementById("shoppingCart").value = thingList;
+    }
+
+</script>
+
+</body>
+
+</html>
