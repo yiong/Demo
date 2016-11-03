@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <title>判断元音字母</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        table {
+            margin: 20px auto;
+            width: 300px;
+        }
+
+        td {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h2>判断元音字母</h2>
+<hr/>
+<p>分类统计输入字符串中元音字母和其他字符的个数（不区分大小写）</p>
+<form>
+    <input type="text" id="UserInput" autofocus placeholder="请输入英文字母">
+    <input type="button" onclick="judgeFun()" value="开始判断">
+</form>
+
+<table border="1">
+    <caption>统计结果</caption>
+    <tr>
+        <th>统计对象</th>
+        <th>个数</th>
+    </tr>
+    <tr>
+        <th>A</th>
+        <td id="anShow"></td>
+    </tr>
+    <tr>
+        <th>E</th>
+        <td id="enShow"></td>
+    </tr>
+    <tr>
+        <th>I</th>
+        <td id="inShow"></td>
+    </tr>
+    <tr>
+        <th>O</th>
+        <td id="onShow"></td>
+    </tr>
+    <tr>
+        <th>U</th>
+        <td id="unShow"></td>
+    </tr>
+    <tr>
+        <th>Other</th>
+        <td id="otherShow"></td>
+    </tr>
+    <tr>
+        <th>输入的字符长度</th>
+        <td id="total"></td>
+    </tr>
+</table>
+<script>
+    function judgeFun() {
+        var An = 0;
+        var En = 0;
+        var In = 0;
+        var On = 0;
+        var Un = 0;
+        var other = 0;  //定义元音字母及其他字母的计数变量
+        var arr = new Array();   //声明数组arr
+        arr = document.getElementById("UserInput").value;       //使arr获取输入值
+        for (var i = 0; i < arr.length; i++) {          //利用for循环完成对数组arr的遍历
+            switch (arr[i]) {
+                case 'A':
+                case 'a':
+                    An++;
+                    break;      //由于对元音字母大小写不作要求，因此将A与a归为同一种情况计数
+                case 'E':
+                case 'e':
+                    En++;
+                    break;
+                case 'I':
+                case 'i':
+                    In++;
+                    break;
+                case 'O':
+                case 'o':
+                    On++;
+                    break;
+                case 'U':
+                case 'u':
+                    Un++;
+                    break;
+                default:
+                    /*other = arr.length - (An + In + En + In + On);*/
+                    //若使用上面办法，通过反减求other
+                    //则如果输入字符串的最后一个字母为元音字母，
+                    // 那么other的计数将产生错误！
+                    //多么痛的领悟！
+
+                    other++;
+                    //若other采用自身连加则不会受到输入字符串中元音字母个数的影响
+                    //因为other的计数是通过自身连加完成的。
+            }
+        }
+        //向表格输出结果
+        document.getElementById("anShow").innerText = An;
+        document.getElementById("enShow").innerText = En;
+        document.getElementById("inShow").innerText = In;
+        document.getElementById("onShow").innerText = On;
+        document.getElementById("unShow").innerText = Un;
+        document.getElementById("otherShow").innerText = other;
+        document.getElementById("total").innerText = arr.length;
+    }
+</script>
+</body>
+</html>
