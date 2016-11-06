@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .container {
+            margin: 0 auto;
+            width: 620px;
+        }
+
+        fieldset {
+            padding: 18px;
+            background-color: #c7fff5;
+        }
+
+        fieldset legend {
+            font-size: larger;
+            border: 1px darkgray solid;
+            padding: 10px;
+            background-color: white;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        textarea {
+            display: block;
+            width: 96%;
+            padding: 2%;
+            margin: 0 0 20px 0;
+            border: 1px solid silver; /*为输入控件添加border，使之与label对齐*/
+            border-top: none;
+            font-size: 12px;
+        }
+
+        textarea {
+            resize: none; /*不允许调整textarea的大小，但IE浏览器本身就不支持调整textarea的大小*/
+        }
+
+        label {
+            display: block;
+            width: 98%;
+            padding: 1%;
+            font-size: 12px;
+            background-color: cornflowerblue;
+            color: aliceblue;
+            border: 1px solid slategray; /*为label元素添加border元素使之与输入控件对齐*/
+        }
+
+        input[type="reset"], input[type="submit"] {
+            margin: 10px 30px;
+            background-color: darkorange;
+            color: white;
+            padding: 5px;
+            height: 45px;
+            width: 80px;
+            border: 0;
+        }
+
+        input[type="reset"], input[type="submit"]:hover {
+            cursor: pointer;
+            border-color: royalblue;
+        }
+
+        input[type="reset"], input[type="submit"]:active {
+            cursor: pointer;
+            border-color: black;
+            outline-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>应用样式美化表单</h2>
+    <hr/>
+    <form>
+        <fieldset>
+            <legend>Contact</legend>
+            <label for="userName">Name:</label><input type="text" id="userName"><br/>
+            <label for="userEmail">Email Address:</label><input type="email" name="userEmail" id="userEmail"><br/>
+            <label for="homeAddress">Address:</label><input type="text" id="homeAddress"><br/>
+            <label for="phoneNum">Phone Number:</label><input type="tel" id="phoneNum"><br/>
+            <label for="messages">Messages:</label><textarea id="messages" cols="10" rows="2"></textarea>
+
+        </fieldset>
+        <input type="reset" value="Reset">&nbsp;<input type="submit" value="Submit">
+    </form>
+</div>
+<br/>
+<div align="center"><img border="0"
+                         src="http://cc.amazingcounters.com/counter.php?i=3208861&c=9626896" title="网站浏览次数统计">
+</div>
+
+</body>
+</html>
