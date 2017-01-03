@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exploreDOMNode</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="myDiv">
+    <p>This is a Div element!</p>
+</div>
+<script>
+    var divNode = document.getElementById('myDiv');
+    //输出 DIV
+    console.info(divNode.nodeName);
+    //输出 1
+    console.info(divNode.nodeType);
+    //输出 This is a Div element!
+    console.info(divNode.innerText);
+    //输出 <p>This is a Div element!</p>
+    console.info(divNode.innerHTML);
+</script>
+</body>
+</html>
